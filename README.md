@@ -1,60 +1,39 @@
-🧱 Task 1 – Java Backend and REST API
-📘 Overview
+Task 1 - Java Backend and REST API
+Overview
 
-Developed a Spring Boot REST API that manages and executes “Task” objects.
-Each Task represents a shell command and stores execution details in MongoDB.
+This task involves developing a Java-based REST API application to manage "Task" objects.
+Each task represents a shell command that can be executed and stored in MongoDB along with execution details.
 
-🧩 Features
-
-CRUD operations for Task objects
-
-Search tasks by ID or name
-
-Execute shell commands via a PUT /taskExecution/{id} endpoint
-
-MongoDB persistence using Spring Data
-
-Validation to prevent unsafe/malicious commands
-
-📄 Entity Model
-
-Task
-
-{
-  "id": "123",
-  "name": "Print Hello",
-  "owner": "John Smith",
-  "command": "echo Hello World!",
-  "taskExecutions": [
-    {
-      "startTime": "2025-04-21T15:51:42Z",
-      "endTime": "2025-04-21T15:51:43Z",
-      "output": "Hello World!"
-    }
-  ]
-}
-
-⚙️ Endpoints
-Method	Endpoint	Description
-GET	/tasks	Get all tasks
-GET	/tasks/{id}	Get task by ID
-GET	/tasks/find?name=	Search by name substring
-PUT	/tasks	Create or update a task
-DELETE	/tasks/{id}	Delete a task
-PUT	/taskExecution/{id}	Run a task’s shell command
-🧠 Tech Stack
+Technologies Used
 
 Java 17
 
-Spring Boot 3+
+Spring Boot Framework
 
 MongoDB
 
 Maven
 
-Postman / cURL for testing
+Features Implemented
 
-🖥️ Sample Run
-curl -X PUT http://localhost:8080/tasks \
-  -H "Content-Type: application/json" \
-  -d '{"id":"1","name":"Say Hello","owner":"Jayanth","command":"echo Hello Kaiburr!"}'
+Create a new task
+
+Get all tasks or fetch a task by ID
+
+Delete a task
+
+Search for tasks by name
+
+Execute a command by task ID
+
+Store multiple executions for each task, including start time, end time, and command output
+
+Database Integration
+
+All task data is stored in MongoDB.
+The connection details are configured in the application.properties file.
+
+Testing
+
+The API was tested using Postman and cURL commands.
+Screenshots of request and response results are included in the screenshots folder.
